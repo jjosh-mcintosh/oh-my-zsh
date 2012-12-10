@@ -16,9 +16,9 @@ cd () {
   elif [[ "x$*" == "x...." ]]; then
     cd ../../..
   elif [[ "x$*" == "x....." ]]; then
-    cd ../../..
-  elif [[ "x$*" == "x......" ]]; then
     cd ../../../..
+  elif [[ "x$*" == "x......" ]]; then
+    cd ../../../../..
   else
     builtin cd "$@"
   fi
@@ -27,8 +27,3 @@ cd () {
 alias md='mkdir -p'
 alias rd=rmdir
 alias d='dirs -v | head -10'
-
-# mkdir & cd to it
-function mcd() { 
-  mkdir -p "$1" && cd "$1"; 
-}
